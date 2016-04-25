@@ -27,7 +27,7 @@ char **cur_name = names;
 
 //second way of using pointers
 for (i=0; i < count; i++) {
-	printf("%x is %d years old.\n", (cur_name + i), *(cur_age + i)); 
+	printf("%d is at %x is %d years old.\n",i, (cur_name + i), *(cur_name + i), *(cur_age + i)); 
 }
 
 //third way, pointers are just arrays
