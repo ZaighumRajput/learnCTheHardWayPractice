@@ -22,7 +22,7 @@ for (i = 0; i < count; i++) {
 printf("---\n");
 
 // set up the pointers to the start of the arrays
-int *cur_age = 	ages;
+int *cur_age = (int *)names;
 char **cur_name = names;
 
 //second way of using pointers
