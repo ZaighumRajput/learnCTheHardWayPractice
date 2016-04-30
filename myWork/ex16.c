@@ -52,4 +52,20 @@ int main(int argc, char * argv[]){
 
 	printf("Frank is at memory location %p:\n", frank);
 	Person_print(frank);
+	
+	//make everyone age 20 years and print them again
+	joe->age += 20;
+	joe->height += 2;
+	joe->weight += 40;
+	Person_print(joe);
+
+	frank->age += 20;
+	frank->weight += 20;
+	Person_print(frank);
+
+	// destroy them both so we clean up
+	Person_destroy(joe);
+	Person_destroy(frank);
+
+	return 0;
 }
