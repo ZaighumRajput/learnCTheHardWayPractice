@@ -81,6 +81,16 @@ void test_sorting(int *numbers, int count, compare_cb cmp)
 	printf("\n");
 
 	free(sorted);
+	//Breaking
+	/*
+	unsigned char *data = (unsigned char *)cmp;
+
+	for(i= 0; i < 25; i++) {
+		printf("%02x:", data[i]);
+	}
+
+	printf("\n");
+*/
 }
 
 int main(int argc, char *argv[])
@@ -103,7 +113,7 @@ int main(int argc, char *argv[])
 	test_sorting(numbers, count, strange_order);
 
 	free(numbers);
-
+	
 	return 0;
 }
 
