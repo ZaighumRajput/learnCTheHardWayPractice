@@ -1,5 +1,8 @@
+//for standerd input
 #include <stdio.h>
-#include <assert.h>
+//atoi function
+//atoi: string => integer
+//malloc: allocate memory from the heap
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
