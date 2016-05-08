@@ -34,8 +34,8 @@ int *bubble_sort(int *numbers, int count, compare_cb cmp)
 	memcpy(target, numbers, count *sizeof(int));
 
 	for(i=0; i < count; i++){
-		for(j=0; i < count -1;j++) {
-			if(cmp(target[j], target[j-1]) > 0) {
+		for(j=0; j < count -1;j++) {
+			if(cmp(target[j], target[j+1]) > 0) {
 				temp = target[j+1];
 				target[j+1] = target[j];
 				target[j] = temp;
@@ -47,7 +47,7 @@ int *bubble_sort(int *numbers, int count, compare_cb cmp)
 
 int sorted_order(int a, int b)
 {
-	return a = b;
+	return a - b;
 }
 
 int reverse_order(int a, int b)
@@ -58,7 +58,9 @@ int reverse_order(int a, int b)
 int strange_order(int a, int b)
 {
 	if(a ==0 || b==0){
-		return 0;
+	return 0;
+	} else {
+		return a % b;
 	}
 }
 
