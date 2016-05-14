@@ -63,6 +63,7 @@ int strange_order(int a, int b)
 		return a % b;
 	}
 }
+
 void dump(compare_cb cmp)
 {
 	int i=0;
@@ -73,9 +74,20 @@ void dump(compare_cb cmp)
 	}
 
 	printf("\n");
-
-
 }
+
+void destroy(compare_cb cmp)
+{
+	int i=0;
+	unsigned char *data = (unsigned char *)cmp;
+
+	for(i= 0; i < 25; i++) {
+		data[i] = 1;
+	}
+
+	printf("\n");
+}
+
 
 
 /**
@@ -97,7 +109,6 @@ void test_sorting(int *numbers, int count, compare_cb cmp)
 	printf("\n");
 
 	free(sorted);
-	//Breaking
 	
 
 }
@@ -122,13 +133,22 @@ int main(int argc, char *argv[])
 	test_sorting(numbers, count, strange_order);
 
 	free(numbers);
+
 	printf("SORTED_ORDER CODE:\n");
 	dump(sorted_order);
+	
 	printf("REVERSE_CODE:\n");
 	dump(reverse_order);
+
 	printf("STRANGE_ORDER:\n");
 	dump(strange_order);
 
+	printf("DESTROYING_SORTED_EXECUTABLE_CODE:\n");
+	destroy(sorted_order);
+
+	printf("SORTED_ORDER CODE:\n");
+	dump(sorted_order);
+	
 	return 0;
 }
 
