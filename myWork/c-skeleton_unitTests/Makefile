@@ -4,6 +4,7 @@ LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
+HEADERS=$(wildcard src/**/*.h src/*.h)
 OBJECTS=$(patsubt %.c, %.o, $(SOURCES))
 
 TEST_SRC=$(wildcard test/*_tests.c)
@@ -21,7 +22,10 @@ dev = CFLAGS=-g -Wall -Isrc -Wall -Wextra $(OPTFLAGS)
 
 dev: all
 
+$(TESTS): $(TARGET) $(SO_TARGET)
+
 $(TARGET): CLAGS += -fPIC
+	#$@ means the current target
 $(TARGET): build $(OBJECTS)
 	ar rcs $@ $(OBJECTS)
 	ranlib $@
