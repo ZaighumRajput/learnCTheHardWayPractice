@@ -19,6 +19,8 @@ int main(int argc, char *argv[]){
     //dlopen in dlfcn.h
     //void *dlopen(const char *filename, int flag);
     // All necessary relocations shall be performed when the object is first loaded.
+    //RTDL_NOW means all necessary relocations when object is first loaded
+    //can also use RTDL_LAZY so only when you reference a given symbol that it will get loaded
     void *lib = dlopen(lib_file, RTLD_NOW);
     //dlerror returns the latest error from dlopen, dlsym, or dlclose
     check(lib != NULL, "Failed to open the library %s: %s", lib_file, dlerror());
