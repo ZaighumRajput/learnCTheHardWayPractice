@@ -15,4 +15,32 @@ char *test_create()
     return NULL;
 }
 
+char *test_destroy()
+{
+	List_clear_destroy(list);	
+
+}
+char *test_push_pop()
+{
+	List_push(list, test1);
+	mu_assert(List_last(list) == test1, "Wrong last value.");
+
+
+
+
+}
+
+char *all_tests()
+{
+	mu_suite_start();
+
+	mu_run_test(test_create);
+	mu_run_test(test_destroy);
+	mu_run_test(test_push_pop);
+	
+	return NULL;
+}
+
+RUN_TESTS(all_tests);
+
 
