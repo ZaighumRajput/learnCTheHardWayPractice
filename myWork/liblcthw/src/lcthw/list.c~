@@ -101,7 +101,7 @@ error:
 void *List_pop(List * list)
 {
 	ListNode *node = list->last;
-	return node != NULL ? List_remove(list, node) : NULL; 
-	//return node->value;
+	//return node != NULL ? List_remove(list, node) : NULL; 
+	return node->value;
 }
 
