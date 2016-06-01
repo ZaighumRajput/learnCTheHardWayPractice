@@ -38,17 +38,17 @@ char *test_push_pop()
 
     char *val = List_pop(list);
     mu_assert(val == test3, "Wrong value on pop.");
-/*
+
     val = List_pop(list);
     mu_assert(val == test2, "Wrong value on pop.");
 
     val = List_pop(list);
     mu_assert(val == test1, "Wrong value on pop.");
     mu_assert(List_count(list) == 0, "Wrong count after pop.");
-*/
+
     return NULL;
 }
-/*
+
 char *test_unshift()
 {
     List_unshift(list, test1);
@@ -77,7 +77,7 @@ char *test_remove()
 
     return NULL;
 }
-
+//this test depends on the above one
 char *test_shift()
 {
     mu_assert(List_count(list) != 0, "Wrong count before shift.");
@@ -91,17 +91,17 @@ char *test_shift()
 
     return NULL;
 }
-*/
+
 char *all_tests()
 {
     mu_suite_start();
 
     mu_run_test(test_create);
     mu_run_test(test_push_pop);
-   // mu_run_test(test_unshift);
-   // mu_run_test(test_remove);
-   // mu_run_test(test_shift);
-   // mu_run_test(test_destroy);
+    mu_run_test(test_unshift);
+    mu_run_test(test_remove);
+    mu_run_test(test_shift);
+    mu_run_test(test_destroy);
 return NULL;
 }
 
