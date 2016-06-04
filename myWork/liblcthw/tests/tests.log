@@ -1,4 +1,8 @@
 ----
+RUNNING: tests/list_algos_tests
+FAILED: Bubble sort failed on an empty list
+Tests run: 1
+----
 RUNNING: tests/list_tests
 ALL TESTS PASSED
 Tests run: 6

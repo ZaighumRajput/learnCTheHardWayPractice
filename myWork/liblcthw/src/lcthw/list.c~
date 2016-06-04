@@ -127,6 +127,13 @@ void List_unshift(List * list, void *value)
 error:
 	return;
 }
+
+void *List_shift(List *list)
+{
+	ListNode *node = list->first;
+	return node != NULL ? List_remove(list, node) : NULL;
+}
+
 /*
 void *List_shift(List * list)
 {
