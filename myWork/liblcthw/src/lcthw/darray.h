@@ -22,7 +22,7 @@ void *DArray_pop(DArray * array);
 //## MACROS ## 
 #define DEFAULT_EXPAND_RATE 300
 #define DArray_free(E) free((E))
-
+#define DArray_count(E) ((E)->end)
 //## STATIC Function for DArray ##
 static inline void DArray_set(DArray * array, int index, void * element)
 {
