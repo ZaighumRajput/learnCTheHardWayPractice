@@ -33,6 +33,16 @@ void *List_pop(List * list);
 void *List_remove(List * list, ListNode * node);
 void List_unshift(List * list, void *value);
 void *List_shift(List * list);
+//L = List
+// 
+//list, first, next, cur
+//define L as the first 
+//till node != NULL?
+// increment is make current node = the next one
+// V = current
+// M = next
+// S = first 
+// L is a pointer to list itself
 #define LIST_FOREACH(L, S, M, V) ListNode *_node = NULL; \
 						    ListNode *V = NULL; \
 for(V = _node = L->S; _node != NULL; V = _node = _node->M)

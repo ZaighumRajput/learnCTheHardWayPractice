@@ -16,6 +16,14 @@ char *test_create()
 	return NULL;
 }
 
+char *test_destroy()
+{
+	mu_assert(stack != NULL, "Failed to create stack.");
+
+	Stack_destroy(stack);
+	return NULL;
+}
+
 char *test_push_pop()
 {
 	int i = 0;
@@ -23,6 +31,8 @@ char *test_push_pop()
 	for(i = 0; i < NUM_TESTS; i++) {
 		Stack_push(stack, tests[i]);
 		
+		//what does stack_peek return?
+		//value at top of the stack
 		mu_assert(Stack_peek(stack) == tests[i], "Wrong next value.");
 	}
 
@@ -46,13 +56,19 @@ char *test_push_pop()
 	return NULL;
 }
 
+
 char *all_tests()
 {
 	mu_suite_start();
 	
 	mu_run_test(test_create);
+
 	mu_run_test(test_push_pop);
+
 	mu_run_test(test_destroy);
 
 	return NULL;
+
 }
+
+RUN_TESTS(all_tests);
